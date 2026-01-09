@@ -1,0 +1,41 @@
+---
+import { BaseLayout } from "cmdesigns";
+import Header from "../components/Header.astro";
+import favicon from "../assets/favicon.svg";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="EmilyCatgirl" lang="de" {favicon}>
+	<Header />
+	<slot />
+	<Footer />
+	<span id="background1"></span>
+	<span id="background2"></span>
+</BaseLayout>
+
+<style>
+	#background1,
+	#background2 {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+	}
+	#background1 {
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: -1;
+	}
+	#background2 {
+		background: linear-gradient(
+			180deg,
+			rgb(255, 118, 172) 0%,
+			rgb(254, 178, 208) 25%,
+			rgb(201, 119, 255) 50%,
+			rgb(179, 214, 255) 75%,
+			rgb(119, 188, 255) 100%
+		);
+		z-index: -2;
+		filter: blur(100px);
+	}
+</style>

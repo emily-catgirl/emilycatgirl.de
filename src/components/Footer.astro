@@ -1,0 +1,25 @@
+---
+let end = new Date().getFullYear();
+
+const years = 2026 == end ? 2026 : 2026 + "-" + end;
+const s = `Copyright &copy; ${years}&nbsp;EmilyCatgirl`;
+---
+
+<footer>
+    <slot />
+    <Fragment set:html={s} />
+</footer>
+
+<style>
+    footer {
+        font-family: Arial;
+        text-align: center;
+        padding-bottom: 2.5em;
+        padding-top: 2.5em;
+        color: #c0c0c0;
+    }
+    a {
+        color: #c0c0c0;
+        text-decoration: none;
+    }
+</style>
